@@ -1,7 +1,8 @@
 import React, { useState,useRef } from 'react';
 import './Home.css'; 
-import {GlobalWorkerOptions ,getDocument } from 'pdfjs-dist/build/pdf';
-
+import { getDocument } from 'pdfjs-dist/build/pdf';
+import { pdfjs } from 'react-pdf';
+import { WorkerMessageHandler } from 'pdfjs-dist/build/pdf.worker.mjs';
 
 
 const App = () => {
@@ -10,7 +11,7 @@ const App = () => {
   const [nuevoTextoConEmoticonos, setNuevoTextoConEmoticonos] = useState('');
   const resultRef = useRef(null);
   
-  GlobalWorkerOptions.workerSrc = 'ruta/al/trabajador/pdf.worker.js';
+  const pdfWorker = new WorkerMessageHandler();
 
 const emoticonos = { 
 
@@ -848,25 +849,13 @@ const emoticonos = {
 
  
 
- 
-
 const buscarPalabrasRelacionadas = (texto) => {
-  let resultados = {};
-
-  Object.entries(emoticonos).forEach(([emoji, palabras]) => {
-    let palabrasEncontradas = palabras.filter(palabra => texto.toLowerCase().includes(palabra));
-    if (palabrasEncontradas.length) {
-      resultados[emoji] = palabrasEncontradas;
-    }
-  });
-
   let textoModificado = texto;
-  Object.entries(resultados).forEach(([emoji, palabras]) => {
+  Object.entries(emoticonos).forEach(([emoji, palabras]) => {
     palabras.forEach(palabra => {
       textoModificado = textoModificado.replaceAll(palabra, `${palabra} ${emoji}`);
     });
   });
-
   return textoModificado;
 };
 
@@ -895,7 +884,7 @@ const handleFileUpload = async (event) => {
       }
 
       const textoMod = buscarPalabrasRelacionadas(textoDelPDF.toLowerCase());
-      setTextoModificado(textoMod);
+      setNuevoTextoConEmoticonos(textoMod);
     };
     reader.readAsArrayBuffer(file);
   }
@@ -941,5 +930,4 @@ return (
   </div>
 );
 };
-
 export default App;
