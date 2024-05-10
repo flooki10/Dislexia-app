@@ -1,37 +1,35 @@
+
 * {
   box-sizing: border-box;
   margin: center;
   padding: center;
 }
 
+/* Estilo para el contenedor principal */
 .App {
   font-family: 'Roboto', sans-serif;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: auto;
+  min-height: 100vh; /* Cambiado a 100vh para que se ajuste al alto de la ventana del navegador */
+  margin: 0 auto;
+  background-image: url('C:\Users\walid\OneDrive\Desktop\necesidades\Npaciente\comunikids\src\11.jpg');
+  background-size: cover; /* Cambiado a cover para que la imagen cubra todo el fondo */
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed; /* La imagen de fondo será fija */
+  top: 0; /* La imagen de fondo empezará desde la parte superior de la página */
+  left: 0; /* La imagen de fondo empezará desde la parte izquierda de la página */
+  right: 0; /* La imagen de fondo terminará en la parte derecha de la página */
+  bottom: 0; /* La imagen de fondo terminará en la parte inferior de la página */
 }
 
 
-.footer {
-  background-color: #353d3d; /* Color consistente con la navbar */
-  color: #fff; /* Texto blanco para contraste */
-  padding: 20px;
-  text-align: center; /* Centrar el contenido del footer */
-  position: absolute; /* Opción 1: posición absoluta dentro de un contenedor relativo */
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
 
 /* Si estás usando Flexbox en el contenedor principal */
 .body-content {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-/* Asegúrate de que el footer se mueva hacia abajo automáticamente */
-.footer {
-  margin-top: auto;
 }
