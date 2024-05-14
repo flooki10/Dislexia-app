@@ -1,70 +1,89 @@
-.app-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
+/* Estilos para la imagen del título */
+.titulo-imagen-container {
+  position: fixed;
+  top: 0;
+  left: 33%;
+  width: 100%;
+  z-index: 999;
+}
+
+.titulo-imagen {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
+/* Estilos para el contenedor del texto emoticonos */
+.emoticonos-container {
+  text-align: center;
+  padding: 40px; /* Reducimos el espaciado interno */
+  position: fixed;
+  top: 380px; /* Ajustamos la posición vertical */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f8f8f8; /* Agregamos un fondo de color */
+  width: 80%; /* Ajustamos el ancho */
+  max-width: 600px; /* Limitamos el ancho máximo */
+  border-radius: 8px; /* Agregamos bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregamos una sombra */
 }
 
 .form-container {
   display: flex;
-  margin-bottom: 20px;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+
 }
 
-.text-input {
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  margin-right: 10px;
-}
-
-.submit-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.submit-button:hover {
-  background-color: #0056b3;
-}
-
-.resultado p {
+/* Estilos para el contenedor del resultado del PDF */
+.pdf-result-container {
+  width: 75%;
+  max-height: 420px; /* Reducimos la altura máxima */
+  overflow-y: auto;
+  margin: 0px auto; /* Agregamos margen alrededor del contenedor */
   padding: 20px;
-  background-color: #f2f2f2;
-  border: 2px dashed #ccc;
-  border-radius: 4px;
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  
 }
 
-.nuevo-texto-container {
-  margin-top: 20px;
+.pdf-upload {
+  display: flex;
+  justify-content: center; /* Centramos horizontalmente los elementos internos */
+}
+
+/* Estilos para el contenedor del PDF */
+.pdf-container {
   text-align: center;
+  position: fixed;
+  top: 650px; /* Ajustamos el margen superior */
+  left: 50%; /* Centramos horizontalmente */
+  transform: translateX(-50%); /* Centramos horizontalmente */
+  width: 80%; /* Definimos un ancho */
 }
 
+
+.pdf-upload label {
+  padding: 2px 4px; /* Reducimos el tamaño del botón */
+  font-size: 14px; /* Reducimos el tamaño del texto */
+  align-items: center;
+}
+
+/* Estilos para el botón de obtener texto */
 .obtener-texto-button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #007bff;
+  background-color: #0056b3;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .obtener-texto-button:hover {
-  background-color: #0056b3;
+  background-color: #003d80;
 }
 
-.cuadro-blanco {
-  padding: 20px;
-  background-color: #fff;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  width: 80%;
-  margin: 0 auto;
-}
