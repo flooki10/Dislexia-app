@@ -1,8 +1,9 @@
 /* Estilos para la imagen del título */
 .titulo-imagen-container {
   position: fixed;
+  text-align: center;
   top: 0;
-  left: 33%;
+  left: 0;
   width: 100%;
   z-index: 999;
 }
@@ -11,6 +12,15 @@
   width: 100%;
   max-width: 800px;
   height: auto;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+  .titulo-imagen-container {
+    left: 50%; /* Centramos horizontalmente */
+    transform: translateX(-50%); /* Centramos horizontalmente */
+    top: 0px;
+  }
 }
 
 /* Estilos para el contenedor del texto emoticonos */
@@ -26,33 +36,31 @@
   max-width: 600px; /* Limitamos el ancho máximo */
   border-radius: 8px; /* Agregamos bordes redondeados */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregamos una sombra */
-}
 
-.form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px;
-
+  /* Media query para dispositivos móviles */
+  @media (max-width: 768px) {
+    top: 22%; /* Ajustamos la posición vertical */
+  }
 }
 
 /* Estilos para el contenedor del resultado del PDF */
 .pdf-result-container {
-  width: 75%;
+  width: 50%; /* Ajustamos el ancho */
   max-height: 420px; /* Reducimos la altura máxima */
   overflow-y: auto;
-  margin: 0px auto; /* Agregamos margen alrededor del contenedor */
+  margin: 10px auto; /* Agregamos margen alrededor del contenedor */
   padding: 20px;
-  border: 2px solid #ccc;
+  border: 3px solid #ccc;
   border-radius: 8px;
   background-color: #fff;
-  
+
+  /* Media query para dispositivos móviles */
+  @media (max-width: 768px) {
+    width: 90%; /* Reducimos el ancho */
+    max-height: 330px;
+  }
 }
 
-.pdf-upload {
-  display: flex;
-  justify-content: center; /* Centramos horizontalmente los elementos internos */
-}
 
 /* Estilos para el contenedor del PDF */
 .pdf-container {
@@ -62,28 +70,12 @@
   left: 50%; /* Centramos horizontalmente */
   transform: translateX(-50%); /* Centramos horizontalmente */
   width: 80%; /* Definimos un ancho */
-}
 
-
-.pdf-upload label {
-  padding: 2px 4px; /* Reducimos el tamaño del botón */
-  font-size: 14px; /* Reducimos el tamaño del texto */
-  align-items: center;
-}
-
-/* Estilos para el botón de obtener texto */
-.obtener-texto-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #0056b3;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-
-.obtener-texto-button:hover {
-  background-color: #003d80;
+  /* Media query para dispositivos móviles */
+  @media (max-width: 768px) {
+    top: 55%; /* Ajustamos el margen superior */
+    max-height: 60%; /* Reducimos la altura máxima */
+    overflow-y: auto; /* Agregamos desplazamiento vertical */
+  }
 }
 
